@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind & DailyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Geometry Genius</title>
+  </head>
+  <body class="bg-white">
+    <section class="mx-7 m-auto min-h-screen">
+      <header>
+        <div
+          class="text-black flex justify-between items-center bg-[#108fd830] p-2 rounded"
+        >
+          <h2>
+            Interactive <br /><span class="text-gray-500">Geometry Genius</span>
+          </h2>
+          <button class="btn btn-sm btn-accent text-white">Blog</button>
+        </div>
+      </header>
+      <main class="mt-10 grid grid-cols-3 gap-2">
+        <!-- Single Element -->
+        <div
+          class="card card-compact w-96 border-solid border-2 border-gray-200 py-3"
+        >
+          <figure>
+            <img src="./images/triangle.png" />
+          </figure>
+          <div class="card-body text-center text-black">
+            <h2 class="text-3xl">Triangle</h2>
+            <p class="py-2">Area (A) =0.5 X b X h</p>
+            <div class="flex">
+              <input
+                type="text"
+                placeholder="b"
+                class="input input-bordered input-sm w-1/2 max-w-xs bg-gray-300"
+              />
+              <p class="pl-2 pr-2">cm</p>
+              <input
+                type="text"
+                placeholder="h"
+                class="input input-bordered input-sm w-1/2 max-w-xs bg-gray-300"
+              />
+              <p class="pl-2">cm</p>
+            </div>
+            <div class="my-2">
+              <button
+                class="btn btn btn-active btn-accent w-full text-white"
+                onclick="my_modal_5.showModal()"
+              >
+                Calculate
+              </button>
+              <dialog
+                id="my_modal_5"
+                class="modal modal-bottom sm:modal-middle"
+              >
+                <div class="modal-box bg-white">
+                  <h3 class="text-3xl font-bold">Area Calculation!</h3>
+                  <p class="py-4 text-2xl">
+                    area in (cm): <span>12</span>cm <sup>2</sup>
+                  </p>
+                  <button class="btn btn-active btn-accent text-white">
+                    Convert to m<sup>2</sup>
+                  </button>
+                  <h3 class="text-2xl mt-1">
+                    area in (m): <span>12</span>m <sup>2</sup>
+                  </h3>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn text-3xl bg-white">❌</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <script src="./script/app.js"></script>
+  </body>
+</html>
