@@ -37,12 +37,14 @@
             <p class="py-2">Area (A) =0.5 X b X h</p>
             <div class="flex">
               <input
+                id="base"
                 type="text"
                 placeholder="b"
                 class="input input-bordered input-sm w-1/2 max-w-xs bg-gray-300"
               />
               <p class="pl-2 pr-2">cm</p>
               <input
+                id="height"
                 type="text"
                 placeholder="h"
                 class="input input-bordered input-sm w-1/2 max-w-xs bg-gray-300"
@@ -51,8 +53,9 @@
             </div>
             <div class="my-2">
               <button
+                id="result-btn"
                 class="btn btn btn-active btn-accent w-full text-white"
-                onclick="my_modal_5.showModal()"
+                onclick="my_modal_5.showModal(), calculateReactArea()"
               >
                 Calculate
               </button>
@@ -63,13 +66,17 @@
                 <div class="modal-box bg-white">
                   <h3 class="text-3xl font-bold">Area Calculation!</h3>
                   <p class="py-4 text-2xl">
-                    area in (cm): <span>12</span>cm <sup>2</sup>
+                    area in (cm): <span id="result">00</span>cm <sup>2</sup>
                   </p>
-                  <button class="btn btn-active btn-accent text-white">
+                  <button
+                    id="convert-meter-btn"
+                    onclick="convertMeterBtn()"
+                    class="btn btn-active btn-accent text-white"
+                  >
                     Convert to m<sup>2</sup>
                   </button>
                   <h3 class="text-2xl mt-1">
-                    area in (m): <span>12</span>m <sup>2</sup>
+                    area in (m): <span id="result-m">00</span>m <sup>2</sup>
                   </h3>
                   <div class="modal-action">
                     <form method="dialog">
